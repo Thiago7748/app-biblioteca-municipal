@@ -1,50 +1,24 @@
-# Welcome to your Expo app 👋
+# App Biblioteca Municipal (Mobile) 📚📱
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicativo móvel desenvolvido com **React Native** e **Expo**, voltado para a consulta do acervo e visualização de avisos de uma biblioteca municipal. 
 
-## Get started
+Este projeto faz parte do **Case da Faculdade** e foi construído com a premissa de um *Back-end API-less*, onde todo o banco de dados e as rotas da API são servidos através de Webhooks automatizados utilizando o **n8n** e o **Google Sheets**.
 
-1. Install dependencies
+## 🚀 Tecnologias Utilizadas
 
-   ```bash
-   npm install
-   ```
+- **Front-end:** React Native, Expo, Expo Router
+- **Navegação:** Stack Navigation / File-based routing
+- **Back-end/API:** [n8n](https://n8n.io/) Webhooks (Hospedado na Hostinger)
+- **Banco de Dados:** Google Sheets
+- **Design:** CSS-in-JS (StyleSheet)
 
-2. Start the app
+## 🏗️ Estrutura do App
 
-   ```bash
-   npx expo start
-   ```
+O aplicativo consome dados reais através de requisições HTTP (`fetch`) feitas aos Webhooks do n8n. As principais telas são:
 
-In the output, you'll find options to open the app in a
+- **Home (`/home`):** Exibe a lista de livros em destaque disponíveis no acervo (título, autor, capa).
+- **Detalhes do Livro (`/detalhes`):** Ao clicar em um livro, exibe informações aprofundadas como sinopse, ISBN e quantidade disponível.
+- **Mural de Avisos (`/avisos`):** Feed de comunicados institucionais da biblioteca (eventos, feriados, multas), também vindo dinamicamente do banco de dados.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 🔒 Segurança
+Nenhuma chave de API direta ou senha de banco de dados fica exposta no Front-End, visto que as regras de acesso à planilha do banco são tratadas nativamente pela integração segura (Credentials) do n8n no servidor.
