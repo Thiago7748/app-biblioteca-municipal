@@ -19,6 +19,3 @@ O aplicativo consome dados reais através de requisições HTTP (`fetch`) feitas
 - **Home (`/home`):** Exibe a lista de livros em destaque disponíveis no acervo (título, autor, capa).
 - **Detalhes do Livro (`/detalhes`):** Ao clicar em um livro, exibe informações aprofundadas como sinopse, ISBN e quantidade disponível.
 - **Mural de Avisos (`/avisos`):** Feed de comunicados institucionais da biblioteca (eventos, feriados, multas), também vindo dinamicamente do banco de dados.
-
-## 🔒 Segurança
-Nenhuma chave de API direta ou senha de banco de dados fica exposta no Front-End, visto que as regras de acesso à planilha do banco são tratadas nativamente pela integração segura (Credentials) do n8n no servidor.
