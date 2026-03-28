@@ -27,7 +27,7 @@ export default function Home() {
   }, []);
 
  const abrirDetalhes = (livro) => {
-    // Agora estamos enviando TODOS os dados para a tela de detalhes
+    //Enviando TODOS os dados para a tela de detalhes
     router.push({
       pathname: '/detalhes',
       params: { 
